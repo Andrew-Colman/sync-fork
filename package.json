@@ -1,0 +1,40 @@
+{
+  "name": "sync-fork",
+  "description": "quick sync your fork",
+  "version": "0.0.1",
+  "main": "bin/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "spectralapps",
+    "email": "contact@spectralapps.com.br",
+    "url": "https://www.spectralapps.com.br"
+  },
+  "keywords": [
+    "git",
+    "sync fork",
+    "git fetch upstrem",
+    "git merge upstream"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spectralapps/sync-fork"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "sync-fork": "bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "prompts": "^2.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.0",
+    "prettier": "^2.1.2"
+  }
+}
