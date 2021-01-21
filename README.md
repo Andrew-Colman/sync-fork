@@ -200,7 +200,9 @@ yarn sync
 
 -   Need to stay sharp within a project that updates every hour like react ? Just **sync-fork**
 
--   Working on a old project ? Just **sync-fork**
+-   Did you know that [Apache](https://github.com/apache) projects are updated every minute ? Just **sync-fork**
+
+-   Working on an old project ? Just **sync-fork**
 
 ### How it works ?
 
