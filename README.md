@@ -9,9 +9,9 @@ npx sync-fork
 0. [Requirements](#Requirements)
 1. [Usage](#Usage-with-cli)
 2. [Parameters](#Parameters)
-3. [Usage with package.json](#Usage-with-package.json)
-4. [Why sync-fork ?](#Why-sync-fork-?)
-5. [What is a fork ?](#What-is-a-fork?)
+3. [Usage with package.json](#Usage-with-packagejson)
+4. [Why sync-fork ?](#Why-sync-fork-)
+5. [What is a fork ?](#What-is-a-fork)
 6. [Git best pratices](#Git-best-pratices)
 
 ## Requirements
