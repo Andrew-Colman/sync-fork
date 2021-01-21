@@ -1,8 +1,8 @@
 {
   "name": "sync-fork",
   "description": "quick sync your fork",
-  "version": "0.0.1",
-  "main": "bin/index.js",
+  "version": "0.5.0",
+  "main": "dist/index.min.js",
   "license": "MIT",
   "author": {
     "name": "spectralapps",
@@ -12,29 +12,34 @@
   "keywords": [
     "git",
     "sync fork",
-    "git fetch upstrem",
-    "git merge upstream"
+    "git fetch upstream",
+    "git merge upstream",
+    "github",
+    "cli tool"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/spectralapps/sync-fork"
+    "url": "https://github.com/andrew-colman/sync-fork"
   },
   "scripts": {
-    "test": "jest"
+    "build": "node builder.js",
+    "prepublish": "yarn build",
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage",
+    "test:only": "jest"
   },
   "bin": {
-    "sync-fork": "bin/index.js"
+    "sync-fork": "dist/index.min.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "commander": "^6.1.0",
-    "prompts": "^2.3.2"
+    "commander": "^6.1.0"
   },
   "devDependencies": {
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.13.0",
-    "husky": "^4.3.0",
-    "jest": "^26.6.0",
-    "prettier": "^2.1.2"
+    "jest": "^26.6.3",
+    "prettier": "^2.1.2",
+    "terser": "^5.5.1"
   }
 }
