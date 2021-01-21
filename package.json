@@ -1,7 +1,7 @@
 {
   "name": "sync-fork",
   "description": "quick sync your fork",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "main": "bin/index.min.js",
   "license": "MIT",
   "author": {
@@ -12,6 +12,7 @@
   "keywords": [
     "git",
     "sync fork",
+    "sync-fork",
     "git fetch upstream",
     "git merge upstream",
     "github",
