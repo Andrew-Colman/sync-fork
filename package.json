@@ -1,8 +1,8 @@
 {
   "name": "sync-fork",
   "description": "quick sync your fork",
-  "version": "0.5.0",
-  "main": "dist/index.min.js",
+  "version": "0.5.2",
+  "main": "bin/index.min.js",
   "license": "MIT",
   "author": {
     "name": "spectralapps",
@@ -23,13 +23,13 @@
   },
   "scripts": {
     "build": "node builder.js",
-    "prepublish": "yarn build",
+    "prepare": "npm run build",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "test:only": "jest"
   },
   "bin": {
-    "sync-fork": "dist/index.min.js"
+    "sync-fork": "bin/index.min.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",

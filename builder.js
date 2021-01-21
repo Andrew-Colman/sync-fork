@@ -12,7 +12,7 @@ const { sync } = require('./lib/icons');
 /**source code */
 const filesDirectory = './lib/';
 /**  optimized code for production destination */
-const buildDestination = './dist/index.min.js';
+const buildDestination = './bin/index.min.js';
 
 /**
  * @main
@@ -25,7 +25,7 @@ const buildDestination = './dist/index.min.js';
 async function build() {
     //check
     await checkSourceCode(filesDirectory);
-    await checkDistFolder(buildDestination);
+    await checkDestFolder(buildDestination);
 
     //reset
     fs.writeFileSync(buildDestination, '', () => {});
@@ -57,7 +57,8 @@ async function build() {
             const hoist = requires + data; // <- hoist fix
 
             minifyData(hoist).then(minifiedData => {
-                fs.appendFileSync(buildDestination, minifiedData);
+                const bin = '#!/usr/bin/env node\n';
+                fs.appendFileSync(buildDestination, bin + minifiedData);
                 console.log(sync, 'build complete!');
             });
         });
@@ -135,7 +136,7 @@ function checkSourceCode(folderPath) {
  *  verify if build destination folder exists, if not create it
  * @param {string} folderPath
  */
-function checkDistFolder(folderPath) {
+function checkDestFolder(folderPath) {
     if (fs.existsSync(folderPath)) {
         return true;
     } else {

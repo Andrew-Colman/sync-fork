@@ -10,6 +10,6 @@ jest.config.js
 images/
 /*
 /*/
-!/dist
+!/bin
 !package.json
 !README.md
