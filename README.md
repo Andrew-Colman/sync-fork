@@ -226,7 +226,7 @@ https://docs.github.com/free-pro-team@latest/github/getting-started-with-github/
 
 **master** / **main** <- the name of default branch
 
-> ( github recently adopeted "main" for new created repositories )
+> ( github recently adopted "main" for new created repositories )
 
 > some projects use a custom name like: **v2** / **canary** / **berry** / ...
 
@@ -240,6 +240,6 @@ https://docs.github.com/free-pro-team@latest/github/getting-started-with-github/
 
 <hr>
 
-#### sync-fork version 0.5.0 - [under dev]
+#### sync-fork version 0.5.4 - [under dev]
 
 > contributions welcome, more info coming soon: builder, tests
