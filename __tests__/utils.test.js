@@ -1,5 +1,5 @@
 const { executeCommand } = require('../lib/utils');
-var mockIo = require('mock-stdio');
+const mockIo = require('mock-stdio');
 
 describe('executeCommand', () => {
     test('git --version', () => {
@@ -22,7 +22,7 @@ describe('executeCommand', () => {
 
         process.env.DEBUG = true;
 
-        const command = 'git checkout master';
+        const command = 'echo';
 
         await executeCommand(command);
 

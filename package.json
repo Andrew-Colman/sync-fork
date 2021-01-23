@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "node builder.js",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "test:only": "jest"
