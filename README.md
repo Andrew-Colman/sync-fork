@@ -1,5 +1,11 @@
 ## <span style="color: #ea4a5a;">§</span> the quickest way to sync your fork
 
+<div style="margin: 1rem;text-align:center;">
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Andrew-Colman/sync-fork/Node.js%20CI">
+
+<img alt="npm" src="https://img.shields.io/npm/dw/sync-fork?logo=npm">
+</div>
+
 ```sh
 npx sync-fork
 ```
