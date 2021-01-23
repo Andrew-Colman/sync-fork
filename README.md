@@ -194,7 +194,7 @@ yarn sync
 
 ## Why sync-fork ?
 
--   Syncing a fork can be tedious, it needs at least 4 different commands, imagine repeting it daily for 10, 100 projects, let's simplify it with just one command, Just **sync-fork**
+-   Syncing a fork can be tedious, it needs at least 4 different commands, imagine repeating it daily for 10, 100 projects, let's simplify it with just one command, Just **sync-fork**
 
 -   They approved your pr ? Just **sync-fork**
 
@@ -243,5 +243,15 @@ https://docs.github.com/free-pro-team@latest/github/getting-started-with-github/
 <hr>
 
 #### sync-fork version 0.5.4 - [under dev]
+
+Global version comming soon (this version is not recommended for global)
+
+```
+npm install -g sync-fork
+```
+
+```sh
+sync-fork
+```
 
 > contributions welcome, more info coming soon: builder, tests
