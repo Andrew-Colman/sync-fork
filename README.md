@@ -19,6 +19,7 @@ npx sync-fork
 4. [Why sync-fork ?](#Why-sync-fork-)
 5. [What is a fork ?](#What-is-a-fork)
 6. [Git best pratices](#Git-best-pratices)
+7. [Build / Deployment ](#Build-/-Deployment)
 
 ## Requirements
 
@@ -260,4 +261,30 @@ npm install -g sync-fork
 sync-fork
 ```
 
-> contributions welcome, more info coming soon: builder, tests
+> contributions welcome, more info coming soon & tests
+
+### Build / Deployment
+
+[builder.js](./builder.js)
+
+> `node builder` or
+> `yarn build` or
+> `npm run build`
+
+-   build for production
+
+-   merge all files (bundle) / update scope hoisting (requires)
+
+-   `terser() => minify`
+
+-   then creates `index.min.js` at `./bin/`
+
+all source code files from `./lib/` gets merged at `./bin/index.min.js`
+
+> the production file that will be deployed at npm
+
+`./bin/` is not shown on github / git repository
+
+and only `/bin/index.min.js` is sent to npm registry
+
+> to make it run faster as possible as it is a cli tool
