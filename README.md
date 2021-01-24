@@ -19,7 +19,7 @@ npx sync-fork
 4. [Why sync-fork ?](#Why-sync-fork-)
 5. [What is a fork ?](#What-is-a-fork)
 6. [Git best pratices](#Git-best-pratices)
-7. [Build / Deployment ](#Build-/-Deployment)
+7. [Build / Deployment ](#Build--Deployment)
 
 ## Requirements
 
@@ -249,20 +249,6 @@ https://docs.github.com/free-pro-team@latest/github/getting-started-with-github/
 
 <hr>
 
-#### sync-fork version 0.5.4 - [under dev]
-
-Global version comming soon (this version is not recommended for global)
-
-```
-npm install -g sync-fork
-```
-
-```sh
-sync-fork
-```
-
-> contributions welcome, more info coming soon & tests
-
 ### Build / Deployment
 
 [builder.js](./builder.js)
@@ -288,3 +274,19 @@ all source code files from `./lib/` gets merged at `./bin/index.min.js`
 and only `/bin/index.min.js` is sent to npm registry
 
 > to make it run faster as possible as it is a cli tool
+
+<hr>
+
+#### sync-fork version 0.5.4 - [under dev]
+
+Global version comming soon (this version is not recommended for global)
+
+```
+npm install -g sync-fork
+```
+
+```sh
+sync-fork
+```
+
+> contributions welcome, more info coming soon & tests
