@@ -46,6 +46,16 @@ git remote add upstream <remote git url>
 npx sync-fork
 ```
 
+### Global Instalation:
+
+```
+npm i -g sync-fork
+```
+
+```sh
+sync-fork
+```
+
 <span style="color: #ea4a5a;">§</span> **synced!!** ✔️
 
 ## Parameters
@@ -253,9 +263,11 @@ https://docs.github.com/free-pro-team@latest/github/getting-started-with-github/
 
 [builder.js](./builder.js)
 
-> `node builder` or
+> build: `node builder` or
 > `yarn build` or
 > `npm run build`
+
+> run production: `node bin/index.min.js`
 
 -   build for production
 
@@ -277,16 +289,6 @@ and only `/bin/index.min.js` is sent to npm registry
 
 <hr>
 
-#### sync-fork version 0.5.4 - [under dev]
-
-Global version comming soon (this version is not recommended for global)
-
-```
-npm install -g sync-fork
-```
-
-```sh
-sync-fork
-```
+#### sync-fork version 0.5.8 - [under dev]
 
 > contributions welcome, more info coming soon & tests
