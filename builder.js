@@ -88,7 +88,7 @@ async function read(file) {
 /**
  * @description find required node_modules or './' requires
  * @example const fs = require('fs')
- * will return this line
+ * //will return this line
  * @param {String} data - the code
  */
 function findRequires(data) {
