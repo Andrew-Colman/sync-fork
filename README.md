@@ -1,9 +1,9 @@
 ## <span style="color: #ea4a5a;">§</span> the quickest way to sync your fork
 
 <div style="margin: 1rem;text-align:center;">
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Andrew-Colman/sync-fork/Node.js%20CI">
-
-<img alt="npm" src="https://img.shields.io/npm/dw/sync-fork?logo=npm">
+  
+[<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Andrew-Colman/sync-fork/Node.js%20CI">](../../actions)
+[<img alt="npm" src="https://img.shields.io/npm/dw/sync-fork?logo=npm">](https://npmjs.com/package/sync-fork)
 </div>
 
 ```sh
@@ -300,11 +300,11 @@ all source code files from `./lib/` gets merged at `./bin/index.min.js`
 
 and only `/bin/index.min.js` is sent to npm registry
 
-> to make it run faster as possible as it is a cli tool
+> to make it run faster as possible as it is a **cli tool**
 
 <hr>
 <br>
 
-#### sync-fork version 0.5.8 - [under dev]
+#### sync-fork version 0.5.9 - [under dev]
 
 > contributions welcome, more info coming soon & tests
