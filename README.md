@@ -42,6 +42,8 @@ git remote add upstream <remote git url>
 
 > make sure you've added the remote url and have access to the repository ( if already done skip it )
 
+### Run with npx:
+
 ```sh
 npx sync-fork
 ```
@@ -65,13 +67,13 @@ sync-fork
 **-u** _--upstream_
 
 ```sh
-npx sync-fork -u <upstreamName>
+sync-fork -u <upstreamName>
 ```
 
 examples:
 
 ```
- sync-fork -u heroku
+sync-fork -u heroku
 # heroku
 ```
 
@@ -80,19 +82,19 @@ examples:
 **-b** _--branch_
 
 ```sh
-npx sync-fork -b <branchName>
+sync-fork -b <branchName>
 ```
 
 examples:
 
 ```sh
- sync-fork -b main
+sync-fork -b main
 # github new default naming
 
- sync-fork -b v2
+sync-fork -b v2
 # parcel
 
- sync-fork -b canary
+sync-fork -b canary
 # next.js
 ```
 
@@ -100,12 +102,24 @@ some parameters can be used together:
 
 `sync-fork -u upstreamName -b branchName`
 
+### Resolving Conflicts
+
+_--reset_
+
+```sh
+sync-fork --reset
+# resets your fork - best option if you want to be truly sync (will discard your commits and all possible conflicts)
+# but can be run at any time if you made mistakes in your fork and want to reset it
+```
+
+for more complex conflicts we recommend resolving them manually (like accepting local or upcoming changes)
+
 ### **Sync and log changes:**
 
 **-l** _--log_
 
 ```sh
-npx sync-fork -l
+sync-fork -l
 ```
 
 will sync and give what's new (the 10 last commits) in a nice format
@@ -129,7 +143,7 @@ will sync and give what's new (the 10 last commits) in a nice format
 if you only want to see this nice formatted log at any time: (will skip sync)
 
 ```sh
-npx sync-fork --log-only
+sync-fork --log-only
 ```
 
 ### **Add a remote url:**
@@ -139,16 +153,16 @@ npx sync-fork --log-only
 add a remote upstream url ( the first step after forking a new project )
 
 ```sh
-npx sync-fork -a <remoteUrl>
+sync-fork -a <remoteUrl>
 ```
 
 examples:
 
 ```sh
- sync-fork -a https://github.com/facebook/react.git
+sync-fork -a https://github.com/facebook/react.git
 # react
 # then:
-npx sync-fork
+sync-fork
 ```
 
 ### **Remove a remote url:**
@@ -158,15 +172,15 @@ npx sync-fork
 remove a mistyped url by remote name
 
 ```sh
-npx sync-fork -r <remoteName>
+sync-fork -r <remoteName>
 ```
 
 examples:
 
 ```sh
- git remote -v
+git remote -v
 # list all remote urls, then:
- sync-fork -r wrongName
+sync-fork -r wrongName
 # removing a mistyped url by remote name
 ```
 
@@ -177,7 +191,7 @@ examples:
 (advanced use) use only if sync-fork isn't working
 
 ```sh
-npx sync-fork -d
+sync-fork -d
 ```
 
 ## Usage with package.json
@@ -221,7 +235,7 @@ yarn sync
 
 -   Working on an old project ? Just **sync-fork**
 
-### How it works ?
+## How it works ?
 
 -   Checkout to master/main branch
 -   Fetch recent changes
@@ -258,8 +272,9 @@ https://docs.github.com/free-pro-team@latest/github/getting-started-with-github/
 > some projects may differ, verify their contributing guides
 
 <hr>
+<br>
 
-### Build / Deployment
+## Build / Deployment
 
 [builder.js](./builder.js)
 
@@ -288,6 +303,7 @@ and only `/bin/index.min.js` is sent to npm registry
 > to make it run faster as possible as it is a cli tool
 
 <hr>
+<br>
 
 #### sync-fork version 0.5.8 - [under dev]
 
