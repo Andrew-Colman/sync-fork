@@ -4,6 +4,8 @@
   
 [<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Andrew-Colman/sync-fork/Node.js%20CI">](../../actions)
 [<img alt="npm" src="https://img.shields.io/npm/dw/sync-fork?logo=npm">](https://npmjs.com/package/sync-fork)
+[<img alt="npm" src="https://img.shields.io/badge/-Yarn-2C8EBB?&logo=yarn&logoColor=fff">](https://yarnpkg.com/package/sync-fork)
+
 </div>
 
 ```sh
@@ -50,8 +52,14 @@ npx sync-fork
 
 ### Global Instalation:
 
-```
+```sh
+# choose one package manager:
+
 npm i -g sync-fork
+# npm
+
+yarn global add sync-fork
+# yarn 
 ```
 
 ```sh
@@ -182,6 +190,16 @@ git remote -v
 # list all remote urls, then:
 sync-fork -r wrongName
 # removing a mistyped url by remote name
+```
+
+### **Help :**
+
+provides details about available parameters
+
+**sync -h** _--help_
+
+```sh
+sync-fork sync -h
 ```
 
 ### **Debug:**
