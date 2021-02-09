@@ -1,7 +1,7 @@
 {
   "name": "sync-fork",
   "description": "quick sync your fork",
-  "version": "0.5.8",
+  "version": "0.6.0",
   "main": "bin/index.min.js",
   "license": "MIT",
   "author": {

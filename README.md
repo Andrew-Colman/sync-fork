@@ -59,7 +59,7 @@ npm i -g sync-fork
 # npm
 
 yarn global add sync-fork
-# yarn 
+# yarn
 ```
 
 ```sh
@@ -323,6 +323,6 @@ and only `/bin/index.min.js` is sent to npm registry
 <hr>
 <br>
 
-#### sync-fork version 0.5.9 - [under dev]
+#### sync-fork version 0.6.0 - [under dev]
 
 > contributions welcome, more info coming soon & tests
