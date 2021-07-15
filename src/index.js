@@ -1,6 +1,8 @@
 const { Command } = require('commander');
+const { getVersion } = require('nanov');
 
 const { syncFork } = require('./syncFork');
+const { solutions } = require('./messages');
 
 const version = require('../package.json').version;
 
@@ -27,11 +29,20 @@ program
     )
     .option('--log-only', 'log recent commits only (will skip sync)')
     .option('-d,--debug', 'advanced debug ')
-    .action(opts => {
+    .action(async opts => {
         if (opts.debug) process.env.DEBUG = true;
 
         try {
-            syncFork(opts);
+            await syncFork(opts);
+            //verify updates
+            getVersion('sync-fork', version, { cacheTime: 12 }).then(
+                ({ latestVersion }) => {
+                    if (latestVersion)
+                        console.log(
+                            solutions.needsUpdate(version, latestVersion)
+                        );
+                }
+            );
         } catch (error) {
             console.log(error);
         }

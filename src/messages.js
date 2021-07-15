@@ -75,7 +75,7 @@ const solutions = {
 
     alreadyAdded: warning + white('remote url already exists: '),
 
-    needsUpdate: (current, latest) =>
+    latestVersion: (current, latest) =>
         sync +
         'Update Available ' +
         gray(current) +
@@ -87,12 +87,12 @@ const solutions = {
 
     updateInstruction: ' Run ' + green('npm i -g sync-fork') + ' to update ',
 
-    alert: msg => `
+    needsUpdate: (current, latest) => `
 ┌───────────────────────────────────────┐
 │                                       │
 │                                       │
-│  ${msg[0]}   │
-│  ${msg[1]}   │
+│  ${solutions.latestVersion(current, latest)}   │
+│  ${solutions.updateInstruction}   │
 │                                       │
 │                                       │
 └───────────────────────────────────────┘`,
