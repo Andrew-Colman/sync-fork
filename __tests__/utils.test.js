@@ -1,4 +1,4 @@
-const { executeCommand } = require('../lib/utils');
+const { executeCommand } = require('../src/syncFork');
 const mockIo = require('mock-stdio');
 
 describe('executeCommand', () => {
