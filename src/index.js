@@ -1,9 +1,8 @@
 const { Command } = require('commander');
-const program = new Command();
 
-const version = 'sync-fork version: ' + require('../package.json').version;
+const { syncFork } = require('./syncFork');
 
-const { syncFork } = require('./utils');
+const version = require('../package.json').version;
 
 /**
  * Program (CLI TOOL)
@@ -11,10 +10,12 @@ const { syncFork } = require('./utils');
  * @param {string} opts - options called from cmd
  * @example npx sync-fork -b main
  */
+const program = new Command();
+
 program
     .command('sync', { isDefault: true })
     .description('sync your remote fork')
-    .version(version, '-v|--version')
+    .version('sync-fork version: ' + version, '-v|--version')
     .option('-u,--upstream <upstream>', 'upstream')
     .option('-b,--branch <branch>', 'branch')
     .option('-a,--add <upstream url>', 'add upstream')
@@ -29,7 +30,11 @@ program
     .action(opts => {
         if (opts.debug) process.env.DEBUG = true;
 
-        syncFork(opts);
+        try {
+            syncFork(opts);
+        } catch (error) {
+            console.log(error);
+        }
     });
 
 program.parse(process.argv);
