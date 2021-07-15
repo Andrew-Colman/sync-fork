@@ -1,6 +1,4 @@
-const https = require('https');
 const util = require('util');
-const path = require('path');
 const exec = util.promisify(require('child_process').exec);
 const { clearLine } = require('readline');
 
@@ -31,8 +29,6 @@ async function syncFork(opts) {
 
     /* sync */
     try {
-        await checkForUpdates();
-
         await executeCommand(verifyCommand).then(({ stdout }) => {
             if (!stdout.match('git version')) log(solutions.gitNotInstalled);
             return log(solutions.started);
@@ -112,77 +108,6 @@ async function executeCommand(command) {
     }
 
     return { stdout, stderr };
-}
-
-/**
- * Checks if an upate check as been made in the past "period" days,
- * if not, checks for update.
- *
- * @param period Frequency of update checks in days.
- */
-async function checkForUpdates(period = 1) {
-    // convert period from days to ms
-    period *= 8.64e7;
-
-    const fs = require('fs');
-    const cachePath = path.resolve(__dirname, './cache.json');
-    const isGlobal = cachePath.match('node_modules');
-    let dateOverride = false;
-    let cache = {};
-
-    // Check if cache file exist
-    if (!fs.existsSync(cachePath)) {
-        // If cache does not exist then perform a
-        // Update check regardless of last Update Check date
-        cache.lastChecked = Date.now();
-        dateOverride = true;
-    } else {
-        // If it does then get last Update Check date from cache
-        cache = JSON.parse(fs.readFileSync(cachePath));
-
-        // If cache does not have 'lastChecked' key then perform a
-        // Update check regardless of last Update Check date
-        if (!cache.lastChecked) {
-            log('Cache Corrupted. Overwriting cache.');
-            dateOverride = true;
-        }
-    }
-
-    // If in DEBUG mode or cache not found or
-    // If last Update Check happened "period" days ago
-    if (
-        process.env.DEBUG ||
-        dateOverride ||
-        Date.now() - cache.lastChecked > period
-    ) {
-        // Ger latest version from NPM
-        const latest = await getVersion();
-        // GEt current version from package.json
-        const current = JSON.parse(
-            fs.readFileSync(path.resolve(__dirname, '../package.json'))
-        ).version;
-
-        if (process.env.DEBUG || current != latest) {
-            // Generate strings
-            const str = [
-                solutions.needsUpdate(current, latest),
-                solutions.updateInstruction,
-            ];
-
-            // Display the alert
-            console.log(solutions.alert(str));
-        }
-    }
-
-    // Update (or create) cache file.
-    if (isGlobal) {
-        fs.writeFileSync(
-            cachePath,
-            JSON.stringify({
-                lastChecked: Date.now(),
-            })
-        );
-    }
 }
 
 /**
@@ -359,30 +284,6 @@ async function Stop() {
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-/**
- * gets the latest sync-fork version from npm registry
- * @returns {string} version
- */
-async function getVersion() {
-    return new Promise((resolve, reject) => {
-        https
-            .get('https://registry.npmjs.org/sync-fork/latest', res => {
-                let data = '';
-
-                res.on('data', chunk => {
-                    data += chunk;
-                });
-
-                res.on('end', async () => {
-                    resolve(JSON.parse(data).version);
-                });
-            })
-            .on('error', err => {
-                reject('Error: ' + err.message);
-            });
-    });
 }
 
 module.exports = {

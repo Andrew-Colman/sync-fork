@@ -323,5 +323,3 @@ and only `/bin/index.min.js` is sent to npm registry
 
 <hr>
 <br>
-
-#### sync-fork version 0.7.0
