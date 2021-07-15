@@ -7,10 +7,10 @@ const { minify } = require('terser');
 const readdir = util.promisify(fs.readdir);
 const readFile = util.promisify(fs.readFile);
 
-const { sync } = require('./lib/icons');
+const { sync } = require('./src/icons');
 
 /**source code */
-const filesDirectory = './lib/';
+const filesDirectory = './src/';
 /**  optimized code for production destination */
 const buildDestination = './bin/index.min.js';
 
